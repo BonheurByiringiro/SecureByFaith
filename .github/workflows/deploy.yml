@@ -34,19 +34,22 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: https://securebyfaith.com
 
-      - name: Deploy to Vercel (Production)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+      # Uncomment these steps after setting up Vercel and adding GitHub secrets
+      # See .github/WORKFLOW_SETUP.md for instructions
+      
+      # - name: Deploy to Vercel (Production)
+      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   uses: amondnet/vercel-action@v25
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+      #     vercel-args: '--prod'
 
-      - name: Deploy to Vercel (Preview)
-        if: github.event_name == 'pull_request'
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+      # - name: Deploy to Vercel (Preview)
+      #   if: github.event_name == 'pull_request'
+      #   uses: amondnet/vercel-action@v25
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
