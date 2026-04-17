@@ -2,6 +2,7 @@
 
 import { Shield, Brain, Cloud, Lock, TrendingUp, Code, Mail, Linkedin, Github, Instagram } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -107,10 +108,16 @@ export default function Home() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="relative w-full aspect-square bg-gradient-to-br from-cyan-500 to-purple-500 rounded-2xl p-1 glow">
-                <div className="w-full h-full bg-gray-900 rounded-xl flex items-center justify-center">
-                  <Shield className="w-48 h-48 text-cyan-400" />
+            <div className="flex justify-center md:justify-end">
+              <div className="relative w-64 h-64 md:w-72 md:h-72 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full p-1 glow">
+                <div className="w-full h-full bg-white rounded-full overflow-hidden relative p-4">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Bonheur Byiringiro - AI Security Researcher"
+                    fill
+                    className="object-contain object-center"
+                    priority
+                  />
                 </div>
               </div>
             </div>
